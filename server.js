@@ -7,6 +7,7 @@ const msg     = require('gulp-messenger')
 const chalk   = require('chalk')
 const Twig    = require('twig')
 const _       = require('lodash')
+const keypress = require('./lib/keypress');
 
 var twig = Twig.twig;
 
@@ -32,5 +33,7 @@ app.listen(app.get('port'), () => {
   console.log(chalk.cyan('Server Started ' + new Date()));
   msg.log('\n')
   const serverInfo = chalk.yellow(`http://localhost:${app.get('port')}`);
-  msg.success('=', _.pad(`Application Running On: ${serverInfo}`, 80), '=')
+  msg.success('=', _.pad(`Application Running On: ${serverInfo}`, 80), '=');
+
+  keypress.listen();
 })
