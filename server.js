@@ -1,11 +1,11 @@
 
 'use strict'
 
-const express = require('express')
-const app     = express()
-const msg     = require('gulp-messenger')
-const chalk   = require('chalk')
-const _       = require('lodash')
+const express = require('express');
+const app     = express();
+const msg     = require('gulp-messenger');
+const chalk   = require('chalk');
+const _       = require('lodash');
 const mopidyApp = require('./lib/app');
 const io = require('socket.io');
 
