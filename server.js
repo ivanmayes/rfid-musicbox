@@ -6,7 +6,6 @@ const app     = express()
 const msg     = require('gulp-messenger')
 const chalk   = require('chalk')
 const _       = require('lodash')
-const mopidyApp = require('./lib/app');
 const io = require('socket.io');
 
 app.set('port', (process.env.PORT || 3000));
@@ -21,7 +20,4 @@ let server = app.listen(app.get('port'), () => {
 
   // Configure socket connection
   let socket = require('./lib/io.js')(io, app, server);
-
-  // Start connection to mopidy
-  mopidyApp.listen();
 })
